@@ -17,6 +17,15 @@ public class PlayerController : MonoBehaviour
 		rb = GetComponent<Rigidbody>();
 	}
 
+	void Update() 
+	{
+        if (health <= 0)
+        {
+            Debug.Log("Game Over!");
+            SceneManager.LoadScene("maze");
+        }
+    }
+
 	///<summary> WASD or Arrow Keys uesed </summary>
 	void FixedUpdate()
 	{
@@ -36,5 +45,25 @@ public class PlayerController : MonoBehaviour
         {
             rb.AddForce(0, 0, -speed * Time.deltaTime);
         }
-	} 
+	}
+
+	void OnTriggerEnter(Collider other)
+    {
+		// should increment value of score
+        if (other.gameObject.CompareTag("Pickup"))
+        {
+            score++;
+            Debug.Log($"Score: {score}");
+            Destroy(other.gameObject);
+        }
+        if (other.gameObject.CompareTag("Trap"))
+        {
+            health--;
+            Debug.Log($"Health: {health}");
+        }
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            Debug.Log("You win!");
+        }
+    } 
 }
