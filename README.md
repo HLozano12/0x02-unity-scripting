@@ -1,19 +1,23 @@
-# 0x02. Unity - Scripting
+# General
 
-General
+What is the Canvas
 
-What are scripts in Unity and how are they created and used
+What is screen space vs world space
 
-How to control GameObjects with scripts
+How to use the Rect Tool
 
-What is an event function and how are the most common ones used
+What are anchors and how to use them
 
-How to create and destroy GameObjects within scripts
+How to display and update information in the UI
 
-How to use namespaces to organize classes
+What is a coroutine
 
-What are attributes and how to use them
+How to create a menu
 
-How to use Debug.Log()
+How to use Unity’s UI Interaction Components
 
-What is a vector
+What the alpha value of a color is
+
+How to set and change material colors with scripts
+
+What are common accessibility concepts to consider
